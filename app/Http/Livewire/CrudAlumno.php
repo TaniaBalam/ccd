@@ -55,7 +55,7 @@ class CrudAlumno extends Component
         $this->resetPage();
     }
 
-//  ---------------------------------------------- validaciones maestro -------------------------------------------------
+//  ---------------------------------------------- validaciones alumno -------------------------------------------------
     protected $rules = [
         'name' => 'required|string|max:255',
         'last_name' => 'required|string|max:255',
@@ -71,7 +71,7 @@ class CrudAlumno extends Component
         'tallers'=>'required',
     ];
 
-// ------------------------------------------------ resetear input maestro -----------------------------------------------
+// ------------------------------------------------ resetear input alumno -----------------------------------------------
     public function resetInput(){
         //resetea validaciones
         $this->resetValidation();
@@ -222,7 +222,7 @@ class CrudAlumno extends Component
     }
 
 
-// --------------------------------------------------- funciones para eliminar admin----------------------------------
+// --------------------------------------------------- funciones para eliminar alumno----------------------------------
     public function destroye(User $userId, Alumno $alumnoId){
         $asistencias = Asistencia::where("alumno_id","=",$alumnoId->id)->get();
         $modelhasroles = Model_has_role::where("model_id","=",$userId->id)->delete();
@@ -244,7 +244,7 @@ class CrudAlumno extends Component
     }
 
 
-//-------------------------------------------------------  monta la variable maestro -----------------------------------
+//-------------------------------------------------------  monta la variables alumno -----------------------------------
     public function mount(){
 
         $this->taller=Taller::All();
