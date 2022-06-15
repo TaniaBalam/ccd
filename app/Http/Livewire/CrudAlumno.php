@@ -214,7 +214,7 @@ class CrudAlumno extends Component
             $this->resetInput();
             $this->cerrarmodal('#modal2');
             if($this->idtaller<>$a){
-                return redirect('/admin/taller/alumnos/'.$a)->with('success', 'Se actualizo correctamente al alumno');
+                return redirect('/admin/taller/alumnos/'.$a)->with('success', 'Alumno actualizo correctamente al alumno');
             }else{
                 $this->emit('mensaje', 'Alumno actualizado correctamente', 'success');
             }
